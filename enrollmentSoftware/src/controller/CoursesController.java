@@ -42,7 +42,8 @@ public class CoursesController {
   
     
        
-    private void clearFields() {
+    @SuppressWarnings("unused")
+	private void clearFields() {
         codeField.clear();
         nameField.clear();
         creditsField.clear();

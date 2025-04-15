@@ -38,7 +38,8 @@ public class StudentsController {
     
 	
 	
-    private void clearFields() {
+    @SuppressWarnings("unused")
+	private void clearFields() {
         idField.clear();
         nameField.clear();
         emailField.clear();

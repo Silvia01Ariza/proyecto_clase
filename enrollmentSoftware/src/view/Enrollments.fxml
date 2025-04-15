@@ -1,15 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
 
-<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.EnrollmentsController">
-   <center>
-      <VBox alignment="CENTER" prefHeight="500.0" prefWidth="400.0" BorderPane.alignment="CENTER">
-         <children>
-            <Label text="Enrollments' module" />
-         </children>
-      </VBox>
-   </center>
+<BorderPane prefHeight="500.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.EnrollmentsController">
+    <center>
+        <VBox alignment="CENTER" spacing="20.0" style="-fx-background-color: #d0e0f7; -fx-padding: 20px;">
+          
+            <VBox alignment="CENTER" spacing="5.0">
+                <Label style="-fx-font-size: 24px; -fx-text-fill: #444;" text="Matrículas" />
+                <Label style="-fx-font-size: 14px; -fx-text-fill: #888;" text="Registra o consulta matrículas de estudiantes" />
+            </VBox>
+
+         
+            <VBox alignment="CENTER" spacing="10.0" style="-fx-background-color: white; -fx-padding: 20px; -fx-border-radius: 8px;">
+                <ComboBox fx:id="studentComboBox" promptText="Selecciona un estudiante" prefWidth="250" />
+                <ComboBox fx:id="courseComboBox" promptText="Selecciona un curso" prefWidth="250" />
+                <DatePicker fx:id="enrollmentDatePicker" prefWidth="250" />
+            </VBox>
+
+           
+            <TableView fx:id="enrollmentTable" prefHeight="200" prefWidth="350">
+                <columns>
+                    <TableColumn fx:id="studentIdColumn" text="ID Estudiante" prefWidth="100" />
+                    <TableColumn fx:id="courseCodeColumn" text="Curso" prefWidth="100" />
+                    <TableColumn fx:id="dateColumn" text="Fecha" prefWidth="150" />
+                </columns>
+            </TableView>
+        </VBox>
+    </center>
 </BorderPane>
